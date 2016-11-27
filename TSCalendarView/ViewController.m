@@ -23,7 +23,6 @@
     [self.view addSubview: self.calendar];
     // 加载
     [self.calendar loadSubView];
-//    [self.calendar layoutIfNeeded];
 }
 
 - (TSCalendarView *)calendar {
