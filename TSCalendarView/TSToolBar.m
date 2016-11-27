@@ -85,10 +85,12 @@
     return _rightActions;
 }
 
+#pragma mark- 设置标题
 - (void)setTitle:(NSString *)title {
     self.titleLabel.text = title;
 }
 
+#pragma mark- 标题视图
 - (UILabel *)titleLabel {
     if (_titleLabel == nil) {
         _titleLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.frame.size.width - 200) / 2, 0, 200, self.frame.size.height)];
@@ -99,4 +101,7 @@
     return _titleLabel;
 }
 
+- (CGFloat)heightForToolBar {
+    return self.frame.size.height;
+}
 @end

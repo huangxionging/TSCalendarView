@@ -87,23 +87,15 @@
     [self.contentView reloadData];
 }
 
+#pragma mark- 内容集合视图
 - (UICollectionView *)contentView {
     if (_contentView == nil) {
         
         UICollectionViewFlowLayout  *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        
-        // 配置方向
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        
         flowLayout.itemSize = self.itemSize;
-        // 布局
-        
-//        CGFloat width = (self.frame.size.width - 7 * 30) / 8 ;
-//        CGFloat height = (self.frame.size.height - 3 * 30) / 4;
-//        flowLayout.sectionInset = UIEdgeInsetsMake(height, width, height, width);
         flowLayout.minimumLineSpacing = 0;
         flowLayout.minimumInteritemSpacing = 0;
-        
         _contentView = [[UICollectionView alloc] initWithFrame: CGRectZero collectionViewLayout:flowLayout];
         _contentView.backgroundColor = [UIColor clearColor];
         _contentView.showsHorizontalScrollIndicator = NO;
@@ -116,6 +108,7 @@
     return _contentView;
 }
 
+#pragma mark- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return  self.firstWeekDay + self.totalDays;
 }
@@ -125,11 +118,11 @@
     
     if (indexPath.row < self.firstWeekDay) {
         [cell.itemButton setTitle: @"" forState: UIControlStateNormal];
-//        cell.itemButton.backgroundColor = [UIColor clearColor];
+        cell.itemButton.backgroundColor = [UIColor clearColor];
     } else {
         NSString *date = [NSString stringWithFormat: @"%ld", (long)(indexPath.row + 1) - self.firstWeekDay];
         [cell.itemButton setTitle: date forState: UIControlStateNormal];
-//        cell.itemButton.backgroundColor = [UIColor brownColor];
+        cell.itemButton.backgroundColor = [UIColor brownColor];
     }
     
     return cell;

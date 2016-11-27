@@ -13,7 +13,13 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.itemButton = [UIButton buttonWithType: UIButtonTypeCustom];
-        self.itemButton.frame = self.bounds;
+        CGFloat width = frame.size.width;
+        
+        self.itemButton.frame = CGRectMake((width - 30) / 2, (width - 30) / 2, 30, 30);
+        self.itemButton.layer.cornerRadius = 15;
+        self.itemButton.layer.masksToBounds = YES;
+        self.itemButton.layer.shouldRasterize = YES;
+        self.itemButton.backgroundColor = [UIColor brownColor];
         [self.itemButton setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
         [self.contentView addSubview: self.itemButton];
     }

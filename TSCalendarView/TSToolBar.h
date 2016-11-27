@@ -38,4 +38,12 @@
  */
 - (void) addRightAction: (TSAction *)action;
 
+
+/**
+ 高度
+
+ @return 视图的高度
+ */
+- (CGFloat) heightForToolBar;
+
 @end

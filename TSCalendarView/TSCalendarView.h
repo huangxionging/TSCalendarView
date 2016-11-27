@@ -13,8 +13,6 @@
 
 @interface TSCalendarView : UIView
 
-@property (nonatomic, strong) TSToolBar *toolBar;
-
 
 /**
  加载子视图

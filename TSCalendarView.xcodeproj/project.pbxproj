@@ -14,7 +14,6 @@
 		F28D18061DE8362800325DB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28D18051DE8362800325DB5 /* Assets.xcassets */; };
 		F28D18091DE8362800325DB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28D18071DE8362800325DB5 /* LaunchScreen.storyboard */; };
 		F2CFAEB71DE9838900C6C92D /* TSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEB61DE9838900C6C92D /* TSCalendarView.m */; };
-		F2CFAEBC1DE9944700C6C92D /* Controls.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2CFAEBB1DE9944700C6C92D /* Controls.xib */; };
 		F2CFAEBF1DE9C99B00C6C92D /* TSCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEBE1DE9C99B00C6C92D /* TSCalendarModel.m */; };
 		F2CFAEF51DEA8B2300C6C92D /* TSAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEF01DEA8B2300C6C92D /* TSAction.m */; };
 		F2CFAEF61DEA8B2300C6C92D /* TSActionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEF21DEA8B2300C6C92D /* TSActionModel.m */; };
@@ -37,7 +36,6 @@
 		F28D180A1DE8362800325DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2CFAEB51DE9838900C6C92D /* TSCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarView.h; sourceTree = "<group>"; };
 		F2CFAEB61DE9838900C6C92D /* TSCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarView.m; sourceTree = "<group>"; };
-		F2CFAEBB1DE9944700C6C92D /* Controls.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Controls.xib; sourceTree = "<group>"; };
 		F2CFAEBD1DE9C99B00C6C92D /* TSCalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarModel.h; sourceTree = "<group>"; };
 		F2CFAEBE1DE9C99B00C6C92D /* TSCalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarModel.m; sourceTree = "<group>"; };
 		F2CFAEEF1DEA8B2300C6C92D /* TSAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAction.h; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				F2CFAEF21DEA8B2300C6C92D /* TSActionModel.m */,
 				F2CFAEFB1DEA961F00C6C92D /* NSDate+CBPUtilityTool.h */,
 				F2CFAEFC1DEA961F00C6C92D /* NSDate+CBPUtilityTool.m */,
-				F2CFAEBB1DE9944700C6C92D /* Controls.xib */,
 				F28D18021DE8362800325DB5 /* Main.storyboard */,
 				F28D18051DE8362800325DB5 /* Assets.xcassets */,
 				F28D18071DE8362800325DB5 /* LaunchScreen.storyboard */,
@@ -182,7 +179,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F28D18091DE8362800325DB5 /* LaunchScreen.storyboard in Resources */,
-				F2CFAEBC1DE9944700C6C92D /* Controls.xib in Resources */,
 				F28D18061DE8362800325DB5 /* Assets.xcassets in Resources */,
 				F28D18041DE8362800325DB5 /* Main.storyboard in Resources */,
 			);
