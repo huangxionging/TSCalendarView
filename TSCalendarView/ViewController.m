@@ -7,16 +7,31 @@
 //
 
 #import "ViewController.h"
-
+#import "TSCalendarView.h"
 @interface ViewController ()
 
+@property (nonatomic, strong) TSCalendarView *calendar;
 @end
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.view addSubview: self.calendar];
+    // 加载
+    [self.calendar loadSubView];
+//    [self.calendar layoutIfNeeded];
+}
+
+- (TSCalendarView *)calendar {
+    if (_calendar == nil) {
+        _calendar = [[TSCalendarView alloc] initWithFrame: CGRectMake(0, 20, self.view.frame.size.width, 400)];
+        _calendar.backgroundColor = [UIColor yellowColor];
+    }
+    return _calendar;
 }
 
 
