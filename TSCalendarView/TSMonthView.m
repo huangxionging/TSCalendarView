@@ -8,6 +8,7 @@
 
 #import "TSMonthView.h"
 #import "TSCalendarCollectionViewCell.h"
+#import "TSCalendarCollectionViewCellModel.h"
 
 @interface TSMonthView ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -54,12 +55,12 @@
         // 添加
         [self addSubview: self.contentView];
         NSDate *currentDate = [NSDate date];
-        [self reloadDataWithYear: currentDate.yearOfGregorian Month: currentDate.monthOfYear];
+        [self reloadDataWithYear: currentDate.yearOfGregorian month: currentDate.monthOfYear];
     }
     return self;
 }
 
-- (void)reloadDataWithYear:(NSInteger)year Month:(NSInteger)month {
+- (void)reloadDataWithYear:(NSInteger)year month:(NSInteger)month {
     self.year = year;
     self.month = month;
     NSDate *date = [NSDate firstDateByMonth: self.month andByYear: self.year];
@@ -117,12 +118,15 @@
     TSCalendarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"TSCalendarDayCell" forIndexPath: indexPath];
     
     if (indexPath.row < self.firstWeekDay) {
-        [cell.itemButton setTitle: @"" forState: UIControlStateNormal];
-        cell.itemButton.backgroundColor = [UIColor clearColor];
+         [cell setCellWithModel: nil];
+//        [cell.itemButton setTitle: @"" forState: UIControlStateNormal];
+//        cell.itemButton.backgroundColor = [UIColor clearColor];
     } else {
-        NSString *date = [NSString stringWithFormat: @"%ld", (long)(indexPath.row + 1) - self.firstWeekDay];
-        [cell.itemButton setTitle: date forState: UIControlStateNormal];
-        cell.itemButton.backgroundColor = [UIColor brownColor];
+        TSCalendarCollectionViewCellModel *model = [self.monthBrushDatas objectAtIndex: (indexPath.row) - self.firstWeekDay];
+        [cell setCellWithModel: model];
+//        NSString *date = [NSString stringWithFormat: @"%ld", (long)(indexPath.row + 1) - self.firstWeekDay];
+//        [cell.itemButton setTitle: date forState: UIControlStateNormal];
+//        cell.itemButton.backgroundColor = [UIColor brownColor];
     }
     
     return cell;

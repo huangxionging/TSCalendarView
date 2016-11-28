@@ -11,6 +11,13 @@
 
 @interface TSMonthView : UIView
 
+
+/**
+ 一个月的刷牙数据
+ */
+@property (nonatomic, copy) NSArray *monthBrushDatas;
+
+
 /**
  通过 frame 和 选中日期回调初始化
 
@@ -27,7 +34,7 @@
  @param year 年份
  @param month 月份
  */
-- (void)reloadDataWithYear: (NSInteger)year Month: (NSInteger)month;
+- (void)reloadDataWithYear: (NSInteger)year month: (NSInteger)month;
 
 
 /**

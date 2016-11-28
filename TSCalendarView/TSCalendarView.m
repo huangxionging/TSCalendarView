@@ -9,6 +9,7 @@
 #import "TSCalendarView.h"
 #import "TSCalendarHeaderView.h"
 #import "TSMonthView.h"
+#import "TSCalendarViewModel.h"
 
 @interface TSCalendarView ()
 
@@ -65,6 +66,7 @@
     self.toolBar.title = dateString;
     [self addSubview: self.toolBar];
     [self addSubview: self.weekIndicatorView];
+    self.monthView.monthBrushDatas = [TSCalendarViewModel generateModelsWithYear: self.year month: self.month];
     [self addSubview: self.monthView];
 }
 
@@ -125,7 +127,8 @@
     }
     NSString *dateString = [NSString stringWithFormat: @"%04ld-%02ld每日刷牙合格次数", self.year, self.month];
     self.toolBar.title = dateString;
-    [self.monthView reloadDataWithYear: self.year Month:self.month];
+    self.monthView.monthBrushDatas = [TSCalendarViewModel generateModelsWithYear: self.year month: self.month];
+    [self.monthView reloadDataWithYear: self.year month:self.month];
     
 }
 
@@ -137,7 +140,8 @@
     }
     NSString *dateString = [NSString stringWithFormat: @"%04ld-%02ld每日刷牙合格次数", self.year, self.month];
     self.toolBar.title = dateString;
-    [self.monthView reloadDataWithYear: self.year Month:self.month];
+    self.monthView.monthBrushDatas = [TSCalendarViewModel generateModelsWithYear: self.year month: self.month];
+    [self.monthView reloadDataWithYear: self.year month:self.month];
     
 }
 

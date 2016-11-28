@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F21100811DEBCB24000164BD /* TSCalendarCollectionViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F21100801DEBCB24000164BD /* TSCalendarCollectionViewCellModel.m */; };
+		F21100841DEBCE83000164BD /* TSCalendarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F21100831DEBCE83000164BD /* TSCalendarViewModel.m */; };
 		F28D17FB1DE8362700325DB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28D17FA1DE8362700325DB5 /* main.m */; };
 		F28D17FE1DE8362700325DB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28D17FD1DE8362700325DB5 /* AppDelegate.m */; };
 		F28D18011DE8362700325DB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28D18001DE8362700325DB5 /* ViewController.m */; };
@@ -14,7 +16,6 @@
 		F28D18061DE8362800325DB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28D18051DE8362800325DB5 /* Assets.xcassets */; };
 		F28D18091DE8362800325DB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28D18071DE8362800325DB5 /* LaunchScreen.storyboard */; };
 		F2CFAEB71DE9838900C6C92D /* TSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEB61DE9838900C6C92D /* TSCalendarView.m */; };
-		F2CFAEBF1DE9C99B00C6C92D /* TSCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEBE1DE9C99B00C6C92D /* TSCalendarModel.m */; };
 		F2CFAEF51DEA8B2300C6C92D /* TSAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEF01DEA8B2300C6C92D /* TSAction.m */; };
 		F2CFAEF61DEA8B2300C6C92D /* TSActionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEF21DEA8B2300C6C92D /* TSActionModel.m */; };
 		F2CFAEF71DEA8B2300C6C92D /* TSToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFAEF41DEA8B2300C6C92D /* TSToolBar.m */; };
@@ -24,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F211007F1DEBCB24000164BD /* TSCalendarCollectionViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarCollectionViewCellModel.h; sourceTree = "<group>"; };
+		F21100801DEBCB24000164BD /* TSCalendarCollectionViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarCollectionViewCellModel.m; sourceTree = "<group>"; };
+		F21100821DEBCE83000164BD /* TSCalendarViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarViewModel.h; sourceTree = "<group>"; };
+		F21100831DEBCE83000164BD /* TSCalendarViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarViewModel.m; sourceTree = "<group>"; };
 		F28D17F61DE8362700325DB5 /* TSCalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSCalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28D17FA1DE8362700325DB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F28D17FC1DE8362700325DB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -36,8 +41,6 @@
 		F28D180A1DE8362800325DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2CFAEB51DE9838900C6C92D /* TSCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarView.h; sourceTree = "<group>"; };
 		F2CFAEB61DE9838900C6C92D /* TSCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarView.m; sourceTree = "<group>"; };
-		F2CFAEBD1DE9C99B00C6C92D /* TSCalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarModel.h; sourceTree = "<group>"; };
-		F2CFAEBE1DE9C99B00C6C92D /* TSCalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarModel.m; sourceTree = "<group>"; };
 		F2CFAEEF1DEA8B2300C6C92D /* TSAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAction.h; sourceTree = "<group>"; };
 		F2CFAEF01DEA8B2300C6C92D /* TSAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAction.m; sourceTree = "<group>"; };
 		F2CFAEF11DEA8B2300C6C92D /* TSActionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionModel.h; sourceTree = "<group>"; };
@@ -63,6 +66,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F211007E1DEBC868000164BD /* TSToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				F2CFAEF31DEA8B2300C6C92D /* TSToolBar.h */,
+				F2CFAEF41DEA8B2300C6C92D /* TSToolBar.m */,
+				F2CFAEEF1DEA8B2300C6C92D /* TSAction.h */,
+				F2CFAEF01DEA8B2300C6C92D /* TSAction.m */,
+				F2CFAEF11DEA8B2300C6C92D /* TSActionModel.h */,
+				F2CFAEF21DEA8B2300C6C92D /* TSActionModel.m */,
+			);
+			name = TSToolBar;
+			sourceTree = "<group>";
+		};
 		F28D17ED1DE8362700325DB5 = {
 			isa = PBXGroup;
 			children = (
@@ -86,22 +102,19 @@
 				F28D17FD1DE8362700325DB5 /* AppDelegate.m */,
 				F28D17FF1DE8362700325DB5 /* ViewController.h */,
 				F28D18001DE8362700325DB5 /* ViewController.m */,
+				F21100821DEBCE83000164BD /* TSCalendarViewModel.h */,
+				F21100831DEBCE83000164BD /* TSCalendarViewModel.m */,
 				F2CFAEB51DE9838900C6C92D /* TSCalendarView.h */,
 				F2CFAEB61DE9838900C6C92D /* TSCalendarView.m */,
-				F2CFAEBD1DE9C99B00C6C92D /* TSCalendarModel.h */,
-				F2CFAEBE1DE9C99B00C6C92D /* TSCalendarModel.m */,
 				F2CFAEF81DEA95E200C6C92D /* TSMonthView.h */,
 				F2CFAEF91DEA95E200C6C92D /* TSMonthView.m */,
 				F2D6038A1DEABF760089732D /* TSCalendarCollectionViewCell.h */,
 				F2D6038B1DEABF760089732D /* TSCalendarCollectionViewCell.m */,
-				F2CFAEF31DEA8B2300C6C92D /* TSToolBar.h */,
-				F2CFAEF41DEA8B2300C6C92D /* TSToolBar.m */,
-				F2CFAEEF1DEA8B2300C6C92D /* TSAction.h */,
-				F2CFAEF01DEA8B2300C6C92D /* TSAction.m */,
-				F2CFAEF11DEA8B2300C6C92D /* TSActionModel.h */,
-				F2CFAEF21DEA8B2300C6C92D /* TSActionModel.m */,
+				F211007F1DEBCB24000164BD /* TSCalendarCollectionViewCellModel.h */,
+				F21100801DEBCB24000164BD /* TSCalendarCollectionViewCellModel.m */,
 				F2CFAEFB1DEA961F00C6C92D /* NSDate+CBPUtilityTool.h */,
 				F2CFAEFC1DEA961F00C6C92D /* NSDate+CBPUtilityTool.m */,
+				F211007E1DEBC868000164BD /* TSToolBar */,
 				F28D18021DE8362800325DB5 /* Main.storyboard */,
 				F28D18051DE8362800325DB5 /* Assets.xcassets */,
 				F28D18071DE8362800325DB5 /* LaunchScreen.storyboard */,
@@ -194,14 +207,15 @@
 				F28D18011DE8362700325DB5 /* ViewController.m in Sources */,
 				F2CFAEF71DEA8B2300C6C92D /* TSToolBar.m in Sources */,
 				F2CFAEFA1DEA95E200C6C92D /* TSMonthView.m in Sources */,
+				F21100811DEBCB24000164BD /* TSCalendarCollectionViewCellModel.m in Sources */,
 				F2CFAEF51DEA8B2300C6C92D /* TSAction.m in Sources */,
 				F28D17FE1DE8362700325DB5 /* AppDelegate.m in Sources */,
 				F2CFAEFD1DEA961F00C6C92D /* NSDate+CBPUtilityTool.m in Sources */,
 				F2CFAEF61DEA8B2300C6C92D /* TSActionModel.m in Sources */,
 				F28D17FB1DE8362700325DB5 /* main.m in Sources */,
+				F21100841DEBCE83000164BD /* TSCalendarViewModel.m in Sources */,
 				F2CFAEB71DE9838900C6C92D /* TSCalendarView.m in Sources */,
 				F2D6038D1DEABF760089732D /* TSCalendarCollectionViewCell.m in Sources */,
-				F2CFAEBF1DE9C99B00C6C92D /* TSCalendarModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

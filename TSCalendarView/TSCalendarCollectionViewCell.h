@@ -7,9 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TSCalendarCollectionViewCellModel;
 
 @interface TSCalendarCollectionViewCell : UICollectionViewCell
 
+
+/**
+ 按钮
+ */
 @property (strong, nonatomic) UIButton *itemButton;
+
+
+/**
+ 日期 label
+ */
+@property (nonatomic, strong) UILabel *dateLabel;
+
+- (void) setCellWithModel: (TSCalendarCollectionViewCellModel *)model;
 
 @end
