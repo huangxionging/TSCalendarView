@@ -53,11 +53,11 @@
             self.itemButton.backgroundColor = [UIColor colorWithRed: 216 / 255.0 green: 220 / 255.0 blue: 224 / 255.0 alpha: 1.0];
             [self.itemButton setTitle: @"" forState: UIControlStateNormal];
         } else {
-            NSString *times = [NSString stringWithFormat: @"%ld", model.times];
+            NSString *times = [NSString stringWithFormat: @"%ld", (long)model.times];
             [self.itemButton setTitle: times forState: UIControlStateNormal];
         }
         
-        self.dateLabel.text = [NSString stringWithFormat: @"%ld", model.date];
+        self.dateLabel.text = [NSString stringWithFormat: @"%ld", (long)model.date];
     } else {
         // 空
         [self.itemButton setTitle: @"" forState: UIControlStateNormal];

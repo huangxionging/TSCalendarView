@@ -23,6 +23,12 @@
  */
 @property (nonatomic, strong) UIView *weekIndicatorView;
 
+
+/**
+ 刷牙指示
+ */
+@property (nonatomic, strong) UIView *brushIndicatorView;
+
 /**
  月份视图
  */
@@ -62,19 +68,27 @@
     self.date = [NSDate date];
     self.year = [self.date yearOfGregorian];
     self.month = [self.date monthOfYear];
-    NSString *dateString = [NSString stringWithFormat: @"%04ld-%02ld每日刷牙合格次数", self.year, self.month];
+    NSString *dateString = [NSString stringWithFormat: @"%04ld-%02ld每日刷牙合格次数", (long)self.year, (long)self.month];
     self.toolBar.title = dateString;
     [self addSubview: self.toolBar];
     [self addSubview: self.weekIndicatorView];
     self.monthView.monthBrushDatas = [TSCalendarViewModel generateModelsWithYear: self.year month: self.month];
     [self addSubview: self.monthView];
+    [self addSubview: self.brushIndicatorView];
 }
 
 #pragma mark- 布局子视图
 - (void)layoutSubviews {
-    CGRect frame = self.frame;
-    frame.size.height = self.monthView.frame.origin.y + [self.monthView heightForMonthView];;
+    
+    CGRect frame = self.brushIndicatorView.frame;
+    frame.origin.y = self.monthView.frame.origin.y + [self.monthView heightForMonthView];
+    self.brushIndicatorView.frame = frame;
+    
+    // 更改 self 的 frame
+    frame = self.frame;
+    frame.size.height = self.brushIndicatorView.frame.origin.y + 40;
     self.frame = frame;
+    
 }
 
 #pragma mark- 周指示
@@ -94,6 +108,48 @@
         }];
     }
     return _weekIndicatorView;
+}
+
+- (UIView *)brushIndicatorView {
+    if (_brushIndicatorView == nil) {
+        _brushIndicatorView = [[UIView alloc] initWithFrame: CGRectMake(0, self.monthView.frame.origin.y + self.monthView.frame.size.height, self.frame.size.width, 40)];
+        
+        NSArray<NSString *> *brushs = @[@"早晚刷牙", @"未早晚刷牙", @"无记录", @"今天"];
+        
+        __block NSInteger width = 0;
+        [brushs enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            CGSize size = [obj boundingRectWithSize: CGSizeMake(300, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize: 14.0]} context: nil].size;
+            UIView *view = [[UIView alloc] initWithFrame: CGRectMake(width, 0, 25 + size.width, 40)];
+            width += 25 + size.width;
+            UIButton *button = [UIButton buttonWithType: UIButtonTypeCustom];
+            button.frame = CGRectMake(5, (40 - 15) / 2, 15, 15);
+            button.layer.cornerRadius = 15 / 2.0;
+            button.layer.masksToBounds = YES;
+            button.layer.shouldRasterize = YES;
+            [view addSubview: button];
+            if (idx == 0) {
+                button.backgroundColor = [UIColor colorWithRed: 105 / 255.0 green: 193 / 255.0 blue: 228 / 255.0 alpha: 1.0];
+            } else if (idx == 1) {
+                button.backgroundColor = [UIColor colorWithRed: 239 / 255.0 green: 152 / 255.0 blue: 133 / 255.0 alpha: 1.0];
+            } else if (idx == 2) {
+                button.backgroundColor = [UIColor colorWithRed: 216 / 255.0 green: 220 / 255.0 blue: 224 / 255.0 alpha: 1.0];
+            } else {
+                button.layer.borderColor = [UIColor colorWithRed: 105 / 255.0 green: 193 / 255.0 blue: 228 / 255.0 alpha: 1.0].CGColor;
+                button.layer.borderWidth = 0.5;
+            }
+            
+            UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(25, 0, size.width, view.frame.size.height)];
+            label.textAlignment = NSTextAlignmentCenter;
+            label.font = [UIFont systemFontOfSize: 14.0];
+            label.text = obj;
+            [view addSubview: label];
+            
+            
+            [_brushIndicatorView addSubview: view];
+        }];
+    }
+    return _brushIndicatorView;
 }
 
 #pragma mark- 工具条
@@ -125,7 +181,7 @@
         --self.year;
         self.month = 12;
     }
-    NSString *dateString = [NSString stringWithFormat: @"%04ld-%02ld每日刷牙合格次数", self.year, self.month];
+    NSString *dateString = [NSString stringWithFormat: @"%04ld-%02ld每日刷牙合格次数", (long)self.year, (long)self.month];
     self.toolBar.title = dateString;
     self.monthView.monthBrushDatas = [TSCalendarViewModel generateModelsWithYear: self.year month: self.month];
     [self.monthView reloadDataWithYear: self.year month:self.month];
@@ -138,7 +194,7 @@
         ++self.year;
         self.month = 1;
     }
-    NSString *dateString = [NSString stringWithFormat: @"%04ld-%02ld每日刷牙合格次数", self.year, self.month];
+    NSString *dateString = [NSString stringWithFormat: @"%04ld-%02ld每日刷牙合格次数", (long)self.year, (long)self.month];
     self.toolBar.title = dateString;
     self.monthView.monthBrushDatas = [TSCalendarViewModel generateModelsWithYear: self.year month: self.month];
     [self.monthView reloadDataWithYear: self.year month:self.month];
